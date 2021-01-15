@@ -6,9 +6,6 @@ function Cart() {
   const [cart, setCart] = useContext(DataContext).cart;
   const [total, setTotal] = useState(0);
 
-  useEffect(() => {
-    getTotal();
-  }, [cart, getTotal]);
   const getTotal = () => {
     let summ = 0;
     for (let i = 0; i < cart.length; i++) {
@@ -16,6 +13,10 @@ function Cart() {
     }
     setTotal(summ);
   };
+  useEffect(() => {
+    getTotal();
+  }, [cart, getTotal]);
+
   const increase = (id) => {
     cart.forEach((element) => {
       if (element._id === id) {
