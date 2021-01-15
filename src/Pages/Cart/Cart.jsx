@@ -1,16 +1,14 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
 import { DataContext } from "../../Component/Context/DataProvider";
 import "./Cart.css";
 
 function Cart() {
-  const { id } = useParams();
   const [cart, setCart] = useContext(DataContext).cart;
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
     getTotal();
-  }, [cart]);
+  }, [cart, getTotal]);
   const getTotal = () => {
     let summ = 0;
     for (let i = 0; i < cart.length; i++) {
@@ -91,7 +89,7 @@ function Cart() {
       ))}
 
       <div className={`item_total`}>
-        <button >CHECKOUT</button>
+        <button>CHECKOUT</button>
         <p>
           Total : &nbsp;<span>${total}</span>
         </p>

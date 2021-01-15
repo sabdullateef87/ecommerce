@@ -9,7 +9,7 @@ import { DataContext } from "../Context/DataProvider";
 function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const [cart, setCart] = useContext(DataContext).cart;
+  const [cart] = useContext(DataContext).cart;
   const handleToggle = () => {
     setToggleMenu(!toggleMenu);
   };
