@@ -5,7 +5,7 @@ import "./ProductDetails.css";
 
 function ProductDetails() {
   const { id } = useParams();
-  const [products, setProducts] = useContext(DataContext).products;
+  const [products] = useContext(DataContext).products;
   const addToCart = useContext(DataContext).addToCart;
   const [img, setImg] = useState(0);
   const details = products.filter((product, index) => product._id === id);

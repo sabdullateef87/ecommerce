@@ -4,8 +4,8 @@ import { DataContext } from "../../Component/Context/DataProvider";
 import "./Product.css";
 
 function ProductCard({ product }) {
-  const { path, url } = useRouteMatch();
-  const [cart, setCart] = useContext(DataContext).cart;
+  const { url } = useRouteMatch();
+  // const [cart, setCart] = useContext(DataContext).cart;
   const addToCart = useContext(DataContext).addToCart;
   return (
     <div className={`card`}>

@@ -3,11 +3,10 @@ import "./Navbar.css";
 import Menu from "../../Icons/menu.svg";
 import Close from "../../Icons/close.svg";
 import Cart from "../../Icons/shopping-cart-solid.svg";
-import { Link, useLocation, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { DataContext } from "../Context/DataProvider";
 
 function Navbar() {
-  const location = useLocation();
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const [cart, setCart] = useContext(DataContext).cart;
